@@ -1,4 +1,4 @@
-# Torch with Rich Processor Template
+# Train, Validation and Test with Rich Processor Template
 This is 'Template' for training your torch model with Rich progress bar.
 
 
