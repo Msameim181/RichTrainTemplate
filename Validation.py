@@ -9,7 +9,7 @@ from utils.rich_logger import *
 def find_validation_point(n_train, batch_size, val_repeat):
     n_train_batch = n_train // batch_size
     last_point = (n_train_batch + 1) if n_train % batch_size else n_train_batch
-    return [last_point if item == val_repeat else ((n_train_batch//val_repeat) * item)  for item in range(1, val_repeat + 1)]
+    return [last_point if item == val_repeat else ((n_train_batch//val_repeat) * item) for item in range(1, val_repeat + 1)]
 
 
 
