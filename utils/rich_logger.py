@@ -1,7 +1,7 @@
 
 from datetime import timedelta
 
-from rich.console import Group
+from rich.console import Group, Console
 from rich.progress import (BarColumn, Progress, SpinnerColumn, TextColumn,
                            TimeElapsedColumn, TimeRemainingColumn)
 
@@ -282,3 +282,24 @@ def rich_print(message: str, progress_bar: Progress = train_progress):
     """Print the message with rich style. Give me anything with rich style."""
     progress_bar.console.print(f"{message}")
     return
+
+
+def rich_print(message: str, progress_bar: Progress = train_progress, console: Console = Console()) -> None:
+    """Print the message with rich style. Give me anything with rich style."""
+    if progress_bar.tasks:
+        progress_bar.console.print(f"{message}")
+    else:
+        console.print(f"{message}")
+    return
+
+
+def make_console():
+    """Simple console for printing."""
+    return Console()
+
+
+
+if __name__=='__main__':
+    rich_print("[red]Hello World![white] HEY")
+    train_progress.add_task(description="Starting...", total=5, epoch = 1, epochs = 10)
+    rich_print("[red]Hello World![white] YOU")
