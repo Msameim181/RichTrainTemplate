@@ -278,11 +278,6 @@ def progress_group() -> Group:
         eval_progress
     )
 
-def rich_print(message: str, progress_bar: Progress = train_progress):
-    """Print the message with rich style. Give me anything with rich style."""
-    progress_bar.console.print(f"{message}")
-    return
-
 
 def rich_print(message: str, progress_bar: Progress = train_progress, console: Console = Console()) -> None:
     """Print the message with rich style. Give me anything with rich style."""
@@ -293,7 +288,7 @@ def rich_print(message: str, progress_bar: Progress = train_progress, console: C
     return
 
 
-def make_console():
+def make_console() -> Console:
     """Simple console for printing."""
     return Console()
 
